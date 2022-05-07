@@ -4,24 +4,28 @@
     light: #6e61ab
 }*/
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Changing the default font size to use rem unit */
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Lato", sans-serif;
-  color: #333;
-  font-weight: 400;
   line-height: 1.4;
-  padding: 20px;
+  padding: 1rem;
   color: #fff;
 }
 
 .header {
   height: 95vh;
-  background: linear-gradient(rgb(72, 0, 72, 0.8), rgba(72, 140, 192, 0.8))
-    url("../images/hero.jpg");
   background: linear-gradient(rgb(72, 0, 72, 0.8), rgba(72, 136, 192, 0.8)),
     url("../images/hero.jpg");
   background-size: cover;
@@ -33,18 +37,20 @@ body {
 
 .logo-container {
   position: absolute;
-  top: 40px;
-  left: 50px;
+  top: 4rem;
+  left: 5rem;
 }
 
 .logo {
-  height: 45px;
+  height: 4.5rem;
   cursor: pointer;
-  animation: rotate 1s ease-out; /* animation-name, duration, timing-function */
 }
 
+.logo-container {
+  transition: all 0.7s ease-out;
+}
 .logo-container:hover {
-  animation: rotate 1s ease-out;
+  transform: rotate(360deg);
 }
 
 .heading-container {
@@ -52,22 +58,23 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 
 .main-heading {
-  font-size: 3em;
+  font-size: 8rem;
   display: block;
-  letter-spacing: 0.5em;
+  letter-spacing: 5rem;
   animation-name: animateLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
 
 .sub-heading {
+  font-size: 3.5rem;
   display: block;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.5rem;
   animation-name: animateRight;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -77,11 +84,11 @@ body {
 .btn:visited {
   background-color: #fff;
   display: inline-block;
-  margin-top: 30px;
-  padding: 1em 2em;
+  font-size: 1.7rem;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
   text-decoration: none;
   color: rgb(63, 81, 105);
-  font-weight: 600;
   transition: all 0.2s;
   position: relative;
   animation: btnUp 0.5s ease-out 0.75s;
@@ -89,13 +96,13 @@ body {
 }
 
 .btn:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.2rem);
 }
 
 .btn:active {
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
 }
 
 .btn::after {
@@ -120,11 +127,11 @@ body {
 @keyframes animateLeft {
   0% {
     opacity: 0;
-    transform: translate(-100px);
+    transform: translate(-10rem);
   }
 
   80% {
-    transform: translate(10px);
+    transform: translate(1rem);
   }
 
   100% {
@@ -136,11 +143,11 @@ body {
 @keyframes animateRight {
   0% {
     opacity: 0;
-    transform: translate(100px);
+    transform: translate(10rem);
   }
 
   80% {
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
 
   100% {
@@ -149,19 +156,9 @@ body {
   }
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes btnUp {
   0% {
-    transform: translateY(30px);
+    transform: translateY(3rem);
     opacity: 0;
   }
 
