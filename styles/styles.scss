@@ -72,16 +72,27 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  font-size: 1.7rem;
-  margin-top: 3rem;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  color: rgb(63, 81, 105);
-  transition: all 0.2s;
-  position: relative;
+.btn {
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: 1.7rem;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: rgb(63, 81, 105);
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  &--white {
+    background-color: #fff;
+  }
+
+  &--animated {
+    animation: btnUp 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 
   &:hover {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -109,15 +120,6 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
   }
-}
-
-.btn--white {
-  background-color: #fff;
-}
-
-.btn--animated {
-  animation: btnUp 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
 }
 
 /* Start of keyframes */
