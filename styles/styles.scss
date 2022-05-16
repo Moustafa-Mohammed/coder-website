@@ -1,9 +1,3 @@
-/* color {
-    dark: #3f0081 
-    medium: #4b3987
-    light: #6e61ab
-}*/
-
 *,
 *::after,
 *::before {
@@ -26,29 +20,29 @@ body {
 
 .header {
   height: 95vh;
-  background: linear-gradient(rgb(72, 0, 72, 0.8), rgba(72, 136, 192, 0.8)),
+  background: linear-gradient(rgba(#716d89, 0.6), rgba(#00d2ff, 0.6)),
     url("../images/hero.jpg");
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
   position: relative;
   text-align: center;
-}
 
-.header__logo-container {
-  position: absolute;
-  top: 4rem;
-  left: 5rem;
-  transition: all 0.7s ease-out;
-}
+  &__logo-container {
+    position: absolute;
+    top: 4rem;
+    left: 5rem;
+    transition: all 0.7s ease-out;
 
-.header__logo {
-  height: 4.5rem;
-  cursor: pointer;
-}
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
 
-.logo-container:hover {
-  transform: rotate(360deg);
+  &__logo {
+    height: 4.5rem;
+    cursor: pointer;
+  }
 }
 
 .heading-container {
@@ -58,24 +52,24 @@ body {
   transform: translate(-50%, -50%);
   text-transform: capitalize;
   font-weight: 600;
-}
 
-.main--heading {
-  font-size: 8rem;
-  display: block;
-  letter-spacing: 5rem;
-  animation-name: animateLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
+  .main--heading {
+    font-size: 8rem;
+    display: block;
+    letter-spacing: 5rem;
+    animation-name: animateLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
 
-.sub--heading {
-  font-size: 3.5rem;
-  display: block;
-  letter-spacing: 0.5rem;
-  animation-name: animateRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
+  .sub--heading {
+    font-size: 3rem;
+    display: block;
+    letter-spacing: 0.5rem;
+    animation-name: animateRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
 }
 
 .btn:link,
@@ -88,6 +82,33 @@ body {
   color: rgb(63, 81, 105);
   transition: all 0.2s;
   position: relative;
+
+  &:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.1rem);
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
 }
 
 .btn--white {
@@ -97,33 +118,6 @@ body {
 .btn--animated {
   animation: btnUp 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
-}
-
-.btn:hover {
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.2rem);
-}
-
-.btn:active {
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-  transform: translateY(-0.1rem);
-}
-
-.btn::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
 }
 
 /* Start of keyframes */
